@@ -16,5 +16,3 @@ Arguments:
 -- model_dir contains the model checkpoint for fine-tuned classifier from Step 1.b
 -- word_embedding_file (could be Glove or SVD on MBERT word embedding)
 -- teacher_layer to distil froms
-
-Sample data files and format in data directory
