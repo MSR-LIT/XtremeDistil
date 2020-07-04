@@ -1,20 +1,27 @@
-README
---------------------------
+# 2020 Microsoft Research, Subhabrata Mukherjee
+# Code for https://aka.ms/XtremeDistil
 
-Step 1: 
+*** Update 7/4/2020 *** 
+Releasing v1 of XtremeDistil based on the original BERT implementation from https://github.com/google-research/bert and retaining much of the original configurations, parameter settings and nomenclatures.
 
-(a) Fine-tune BERT language model on transfer set (pre-train on unlabeled data starting from checkpoint: https://storage.googleapis.com/bert_models/2018_11_23/multi_cased_L-12_H-768_A-12.zip)
+***Upcoming release***
+We are porting XtremeDistil to Tensorflow 2.1 with HuggingFace Transformers for easy extensibility and distilling all supported pre-trained language models. Please check back by end of July for XtremeDistil-v2.
 
-(b) Fine-tune BERT on the downstream task. 
+[XtremeDistil-v1](https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1) contains codes for distilling pre-trained language models for multi-lingual Named Entity Recognition (NER) in (distil_ner)[https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1/distil_ner] and text classification in (distil_classification)[https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1/distil_classification] with *README* in the corresponding directories.
 
-Step 2: Run the distillation-code. E.g.: "python3.6 BERT_NER.py --task_name=NER --do_lower_case=False --crf=False --do_train=False --do_eval=False --do_predict=True --data_dir=../datasets/NER --vocab_file=../models/multi_cased_L-12_H-768_A-12/vocab.txt --bert_config_file=../models/multi_cased_L-12_H-768_A-12/bert_config.json --max_seq_length=32 --train_batch_size=32 --eval_batch_size=32 --predict_batch_size=32 --learning_rate=2e-5 --num_train_epochs=3.0 --output_dir=/tmp --init_checkpoint=../models/ner_ft_lm/model.ckpt-100000 --pred_file=../datasets/NER/transfer_set.tsv --model_dir=../models/multi_ner_unify --s1_loss=kld --s1_opt=adam --s2_opt=adam --path=.. --distil_task=NER --word_embedding_file=mbase.txt --teacher_layer=-7"
-
-Arguments:
--- refer to code for argument description
--- init_checkpoint contains the model checkpoint from Step 1.a
--- pred_file is the unlabeled transfer set
--- model_dir contains the model checkpoint for fine-tuned classifier from Step 1.b
--- word_embedding_file (could be Glove or SVD on MBERT word embedding)
--- teacher_layer to distil froms
-
-Sample data files and format in data directory
+If you use this code, please cite:
+```
+@inproceedings{mukherjee-hassan-awadallah-2020-xtremedistil,
+    title = "{X}treme{D}istil: Multi-stage Distillation for Massive Multilingual Models",
+    author = "Mukherjee, Subhabrata  and
+      Hassan Awadallah, Ahmed",
+    booktitle = "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics",
+    month = jul,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2020.acl-main.202",
+    pages = "2221--2234",
+    abstract = "Deep and large pre-trained language models are the state-of-the-art for various natural language processing tasks. However, the huge size of these models could be a deterrent to using them in practice. Some recent works use knowledge distillation to compress these huge models into shallow ones. In this work we study knowledge distillation with a focus on multilingual Named Entity Recognition (NER). In particular, we study several distillation strategies and propose a stage-wise optimization scheme leveraging teacher internal representations, that is agnostic of teacher architecture, and show that it outperforms strategies employed in prior works. Additionally, we investigate the role of several factors like the amount of unlabeled data, annotation resources, model architecture and inference latency to name a few. We show that our approach leads to massive compression of teacher models like mBERT by upto 35x in terms of parameters and 51x in terms of latency for batch inference while retaining 95{\%} of its F1-score for NER over 41 languages.",
+}
+```
