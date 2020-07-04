@@ -2,7 +2,7 @@
 # Code for [XtremeDistil](https://www.microsoft.com/en-us/research/publication/xtremedistil/)
 
 ***Update 7/4/2020*** 
-Releasing v1 of XtremeDistil based on the original BERT implementation from https://github.com/google-research/bert and retaining much of the original configurations, parameter settings and nomenclatures.
+Releasing v1 of XtremeDistil based on the original BERT implementation from https://github.com/google-research/bert and retaining much of the original configurations, parameter settings and nomenclature.
 
 ***Upcoming release***
 We are porting XtremeDistil to Tensorflow 2.1 with HuggingFace Transformers for easy extensibility and distilling all supported pre-trained language models. Please check back by end of July for XtremeDistil-v2.
