@@ -7,7 +7,7 @@ Releasing v1 of XtremeDistil based on the original BERT implementation from http
 ***Upcoming release***
 We are porting XtremeDistil to Tensorflow 2.1 with HuggingFace Transformers for easy extensibility and distilling all supported pre-trained language models. Please check back by end of July for XtremeDistil-v2.
 
-[XtremeDistil-v1](https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1) contains codes for distilling pre-trained language models for multi-lingual Named Entity Recognition (NER) in (distil_ner)[https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1/distil_ner] and text classification in (distil_classification)[https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1/distil_classification] with *README* in the corresponding directories.
+[XtremeDistil-v1](https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1) contains codes for distilling pre-trained language models for multi-lingual Named Entity Recognition (NER) in [https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1/distil_ner](distil_ner) and text classification in [https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1/distil_classification](distil_classification) with *README* in the corresponding directories.
 
 If you use this code, please cite:
 ```
