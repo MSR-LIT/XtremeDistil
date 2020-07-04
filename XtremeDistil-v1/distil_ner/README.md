@@ -1,4 +1,4 @@
-# 2020 Microsoft Research, Subhabrata Mukherjee
+# 2020 Microsoft Research
 # Code for https://aka.ms/XtremeDistil
 
 *** Update 7/4/2020 *** 
