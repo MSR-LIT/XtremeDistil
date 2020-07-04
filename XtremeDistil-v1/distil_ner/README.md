@@ -1,7 +1,7 @@
-# 2020 Microsoft Research
+# Microsoft Research
 # Code for https://aka.ms/XtremeDistil
 
-*** Update 7/4/2020 *** 
+***Update 7/4/2020*** 
 Releasing v1 of XtremeDistil based on the original BERT implementation from https://github.com/google-research/bert and retaining much of the original configurations, parameter settings and nomenclatures.
 
 ***Upcoming release***
