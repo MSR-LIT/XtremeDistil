@@ -1,5 +1,5 @@
 # 2020 Microsoft Research, Subhabrata Mukherjee
-# Code for [XtremeDistil](https://www.microsoft.com/en-us/research/publication/xtremedistil/)
+# Code for XtremeDistil [Paper](https://www.microsoft.com/en-us/research/publication/xtremedistil/) [Video](https://slideslive.com/38929189/xtremedistil-multistage-distillation-for-massive-multilingual-models)
 
 ***Update 7/4/2020*** 
 Releasing v1 of XtremeDistil based on the original BERT implementation from https://github.com/google-research/bert and retaining much of the original configurations, parameter settings and nomenclature.
