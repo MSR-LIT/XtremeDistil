@@ -3,6 +3,7 @@ Author: Subho Mukherjee (submukhe@microsoft.com)
 Code for XtremeDistil for distilling massive multi-lingual models.
 """
 
+import conlleval
 import logging
 import numpy as np
 
