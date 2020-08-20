@@ -2,14 +2,13 @@
 # Code for XtremeDistil [[Paper]](https://www.microsoft.com/en-us/research/publication/xtremedistil/) [[Video]](https://slideslive.com/38929189/xtremedistil-multistage-distillation-for-massive-multilingual-models)
 
 ***New Update 8/19/2020***
+
 Releasing [**XtremeDistil-v2**](https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v2) with Tensorflow 2.1 and [HuggingFace Transformers](https://huggingface.co/transformers) for distilling all supported [pre-trained language models](https://huggingface.co/transformers/pretrained_models.html) with an unified API for multilingual text classification and sequence tagging tasks. Refer to [*README*](https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v2) for sample usages.
 
 
 ***(Deprecated)*** 
-Releasing v1 of XtremeDistil based on the original BERT implementation from https://github.com/google-research/bert and retaining much of the original configurations, parameter settings and nomenclature.
 
-
-[XtremeDistil-v1](https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1) contains codes for distilling pre-trained language models for multi-lingual Named Entity Recognition (NER) in [distil_ner](https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1/distil_ner) and text classification in [distil_classification](https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1/distil_classification) with *README* in the corresponding directories.
+[XtremeDistil-v1](https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1) contains codes for distilling pre-trained language models for multi-lingual Named Entity Recognition (NER) in [distil_ner](https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1/distil_ner) and text classification in [distil_classification](https://github.com/MSR-LIT/XtremeDistil/tree/master/XtremeDistil-v1/distil_classification) with *README* in the corresponding directories. Code based on the original BERT implementation from https://github.com/google-research/bert retaining much of the original configurations, parameter settings and nomenclature.
 
 If you use this code, please cite:
 ```
