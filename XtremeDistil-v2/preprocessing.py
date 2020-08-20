@@ -35,7 +35,7 @@ def convert_to_unicode(text):
     raise ValueError("Not running on Python2 or Python 3?")
 
 
-def sequence_tag(tokenizer, words, labels, special_tokens, MAX_SEQUENCE_LENGTH, teacher=None):
+def sequence_process(tokenizer, words, labels, special_tokens, MAX_SEQUENCE_LENGTH, teacher=None):
 
     trimmed_tokens = []
     trimmed_labels = []
@@ -129,9 +129,10 @@ def generate_sequence_data(MAX_SEQUENCE_LENGTH, input_file, label_map, pt_tokeni
         label = [l.split(":")[1] if ":" in l else l for l in label.split(" ")]
 
         if do_NER:
-            text, label = sequence_tag(pt_tokenizer, text.split(" "), label, special_tokens, MAX_SEQUENCE_LENGTH, teacher=False)
+            text, label = sequence_process(pt_tokenizer, text.split(" "), label, special_tokens, MAX_SEQUENCE_LENGTH, teacher=False)
         else:
-            text = pt_tokenizer.tokenize(text)
+            text, _ = sequence_process(pt_tokenizer, text.split(" "), None, special_tokens, MAX_SEQUENCE_LENGTH, teacher=True)
+
 
         texts.append(' '.join(text))
         labels.append([label_map.index(l) for l in label])
@@ -150,7 +151,7 @@ def generate_sequence_data(MAX_SEQUENCE_LENGTH, input_file, label_map, pt_tokeni
                 if len(line)==0:
                     continue
                 text = convert_to_unicode(line[0])
-                text, _ = sequence_tag(pt_tokenizer, text.split(" "), None, special_tokens, MAX_SEQUENCE_LENGTH, teacher=True)
+                text, _ = sequence_process(pt_tokenizer, text.split(" "), None, special_tokens, MAX_SEQUENCE_LENGTH, teacher=True)
                 texts_teacher.append(' '.join(text))
 
     y = np.array(labels)
